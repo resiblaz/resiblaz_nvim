@@ -23,6 +23,8 @@ return {
     -- standard options
     ["j"] = { "v:count == 0 ? 'gj' : 'j'", expr = true, desc = "Move cursor down" },
     ["k"] = { "v:count == 0 ? 'gk' : 'k'", expr = true, desc = "Move cursor up" },
+    ["<C-j>"] = {":m .+1<CR>==", desc = "move currebt line down 1 line"},
+    ["<C-k>"] = {":m .-2<CR>==", desc = "move currebt line up 1 line"},
 
     -- split manager
     -- split screen keymaps
