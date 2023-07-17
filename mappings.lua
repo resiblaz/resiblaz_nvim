@@ -8,8 +8,8 @@ return {
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
-    ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-    ["<leader>bD"] = {
+    ["<Leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+    ["<Leader>bD"] = {
       function()
         require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
       end,
@@ -17,7 +17,7 @@ return {
     },
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
-    ["<leader>b"] = { name = "Buffers" },
+    ["<Leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     -- standard options
@@ -26,21 +26,21 @@ return {
 
     -- split manager
     -- split screen keymaps
-    ["sv"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" },
-    ["sh"] = { "<cmd>split<cr>", desc = "Horizontal Split" },
-    ["so"] = { "<C-w>o", desc = "Close other split window" },
-    ["sc"] = { "<C-w>c", desc = "Close select window" },
+    ["<Leader>sv"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" },
+    ["<Leader>sh"] = { "<cmd>split<cr>", desc = "Horizontal Split" },
+    ["<Leader>so"] = { "<C-w>o", desc = "Close other split window" },
+    ["<Leader>sc"] = { "<C-w>c", desc = "Close select window" },
     ----  vertical scale control
-    ["s,"] = { ":vertical resize -20<CR>", desc = "vertical resize -20" },
-    ["s."] = { ":vertical resize +20<CR>", desc = "vertical resize +20" },
-    ["<C-Left>"] = { ":vertical resize -2<CR>", desc = "vertical resize -2" },
-    ["<C-Right>"] = { ":vertical resize +2<CR>", desc = "vertical resize +2" },
+    ["<Leader>s,"] = { ":vertical resize -20<CR>", desc = "vertical resize -20" },
+    ["<Leader>s."] = { ":vertical resize +20<CR>", desc = "vertical resize +20" },
+    ["<Leader>sn"] = { ":vertical resize -2<CR>", desc = "vertical resize -2" },
+    ["<Leader>sm"] = { ":vertical resize +2<CR>", desc = "vertical resize +2" },
     ----  Horizontal scale control
-    ["sj"] = { ":resize +10<CR>", desc = "Horizontal resize +10" },
-    ["sk"] = { ":resize -10<CR>", desc = "Horizontal resize -10" },
-    ["<C-Up>"] = { ":resize +2<CR>", desc = "Horizontal resize -2" },
-    ["<C-Down>"] = { ":resize -2<CR>", desc = "Horizontal resize +2" },
-    ["s="] = { "<C-w>=", desc = "equal proportion" },
+    ["<Leader>sj"] = { ":resize +10<CR>", desc = "Horizontal resize +10" },
+    ["<Leader>sk"] = { ":resize -10<CR>", desc = "Horizontal resize -10" },
+    ["<Leader>su"] = { ":resize +2<CR>", desc = "Horizontal resize -2" },
+    ["<Leader>si"] = { ":resize -2<CR>", desc = "Horizontal resize +2" },
+    ["<Leader>s="] = { "<C-w>=", desc = "equal proportion" },
     ["<A-h>"] = { "<C-w>h", desc = "Move to left split" },
     ["<A-j>"] = { "<C-w>j", desc = "Move to below split" },
     ["<A-k>"] = { "<C-w>k", desc = "Move to above split" },
@@ -48,10 +48,10 @@ return {
 
 
     -- manager buffer
-    ["<C-w>"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
-    ["<C-W>"] = { function() require("astronvim.utils.buffer").close(0, true) end, desc = "Force close buffer" },
-    ["<C-l>"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
-    ["<C-h>"] = {
+    ["<Leader>bw"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
+    ["<Leader>bW"] = { function() require("astronvim.utils.buffer").close(0, true) end, desc = "Force close buffer" },
+    ["<Leader>bl"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
+    ["<Leader>bh"] = {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
@@ -63,7 +63,7 @@ return {
       function() require("astronvim.utils.buffer").move(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Move buffer tab left",
     },
-    ["<C-p>"] = {
+    ["<Leader>bo"] = {
       function()
         require("astronvim.utils.status.heirline").buffer_picker(function(bufnr) vim.api.nvim_win_set_buf(0, bufnr) end)
       end,
