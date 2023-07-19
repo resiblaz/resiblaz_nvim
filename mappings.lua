@@ -50,10 +50,10 @@ return {
 
 
     -- manager buffer
-    ["<Leader>bw"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
-    ["<Leader>bW"] = { function() require("astronvim.utils.buffer").close(0, true) end, desc = "Force close buffer" },
-    ["<Leader>bl"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
-    ["<Leader>bh"] = {
+    ["<C-w>"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
+    ["<C-W>"] = { function() require("astronvim.utils.buffer").close(0, true) end, desc = "Force close buffer" },
+    ["<C-l>"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
+    ["<C-h>"] = {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
@@ -65,7 +65,7 @@ return {
       function() require("astronvim.utils.buffer").move(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Move buffer tab left",
     },
-    ["<Leader>bo"] = {
+    ["<C-p>"] = {
       function()
         require("astronvim.utils.status.heirline").buffer_picker(function(bufnr) vim.api.nvim_win_set_buf(0, bufnr) end)
       end,
