@@ -1,3 +1,4 @@
+require('./autocmd')
 return {
   -- Configure AstroNvim updates
   updater = {
