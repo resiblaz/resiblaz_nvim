@@ -1,5 +1,8 @@
 require('user/autocmd')
 return {
+  mappings = function(maps)
+    return require("user.keymaps").mapping(maps)
+  end,
   -- Configure AstroNvim updates
   updater = {
     remote = "origin", -- remote to use
