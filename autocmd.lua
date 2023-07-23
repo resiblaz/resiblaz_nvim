@@ -2,7 +2,7 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
  autocmd(
-  { "InsertLeave", "TextChanged" },
+  { "BufLeave"},
   {
     desc = "auto save for files",
     group = augroup("file_auto_process", { clear = true }),
