@@ -1,6 +1,6 @@
 local M = {}
 
-
+-- check OS
 function M.get_os()
   local os
   if vim.fn.has "mac" == 1 then
@@ -25,6 +25,16 @@ end
 
 function M.is_win()
   if M.get_os() == "win" then
+    return true
+  else
+    return false
+  end
+end
+
+-- buffer utils
+function M.is_buffer_change()
+  local current = vim.api.nvim_get_current_buf()
+  if vim.api.nvim_get_option_value("modified", {buf = current}) then
     return true
   else
     return false
