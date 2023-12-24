@@ -20,6 +20,7 @@ function M.mapping(maps)
   -- mappings for plugins 
   M.flash_mappings_p(maps, is_available)
   M.comment_mappings_p(maps, is_available, utils_u)
+  M.toggleterm_mappings(maps)
   return maps
 end
 
@@ -137,5 +138,12 @@ function M.comment_mappings_p(maps, is_available, utils_u)
     end
   end
 end
+
+
+--- toggleterm mappings
+function M.toggleterm_mappings(maps)
+  maps.t["<Esc>"] = {"<C-\\><C-n>"}
+end
+
 
 return M
