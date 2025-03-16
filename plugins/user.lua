@@ -9,4 +9,9 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    "peterhoeg/vim-qml",
+    event = "BufRead",
+    ft = { "qml" },
+  },
 }

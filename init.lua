@@ -54,7 +54,8 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+      -- "qml6_lsp",
+      -- "quick_lint_js",
     },
     config = {
       clangd = {
@@ -62,6 +63,26 @@ return {
           offsetEncoding = "utf-8",
         },
       },
+      -- qml6_lsp = function ()
+      --   return {
+      --     cmd = {"qmlls"},
+      --     filetypes = {'qmljs'},
+      --     root_dir = function (fname)
+      --       return require("lspconfig.util").find_git_ancestor(fname)
+      --     end
+      --   }
+      -- end,
+      --
+      -- quick_lint_js = function()
+      --   return {
+      --     cmd = { "qmllint" },
+      --     filetypes = { "qmljs" },
+      --     single_file_support = true,
+      --     root_dir = function (fname)
+      --       return require("lspconfig.util").find_git_ancestor(fname)
+      --     end
+      --   }
+      -- end
     },
   },
 
