@@ -33,11 +33,21 @@ end
 
 -- buffer utils
 function M.is_buffer_change()
+    local current = vim.api.nvim_get_current_buf()
+    if vim.api.nvim_get_option_value("modified", {buf = current}) then
+      return true
+    else
+      return false
+    end
+  end
+
+function M.nav(n)
   local current = vim.api.nvim_get_current_buf()
-  if vim.api.nvim_get_option_value("modified", {buf = current}) then
-    return true
-  else
-    return false
+  for i, v in ipairs(vim.t.bufs) do
+    if current == v then
+      vim.cmd.b(vim.t.bufs[(i+n-1) % #vim.t.bufs + 1])
+      break
+    end
   end
 end
 

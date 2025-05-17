@@ -1,6 +1,6 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
-local utils_u = require("user.utils.utils")
+local utils_u = require("base.utils")
 
 -- auto save cmd
 autocmd(
